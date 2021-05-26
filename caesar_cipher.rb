@@ -3,7 +3,8 @@ def caesar_cipher(string, shift)
     alpha_caps = [*"A".."Z"]
     alpha_small = [*"a".."z"]
 
-    # Replace capitals and use modified string to change the small alphabets
+    # Using Array#rotate() to shift the characters in the array "alpha_caps" or "alpha_small" and String#tr to replace the characters in the string.
+    # The capitals are first replaced and then the same string is passed to replace the small alphabets.
     (string.tr(alpha_caps.join, alpha_caps.rotate(shift).join)).tr(alpha_small.join, alpha_small.rotate(shift).join)
 end
 
